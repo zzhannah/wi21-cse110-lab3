@@ -1,3 +1,5 @@
+/* A comment for css files:) */
+
 body {
     background-color: lightblue;
 }
@@ -5,4 +7,99 @@ body {
 h4 {
     color: orange;
     margin-left: 15px;
+}
+
+p {
+    font-family: "Yusei Magic", Yusei Magic, serif;
+}
+
+p.dis_none {display: none;}
+p.dis_inline {display: inline;}
+p.max_width {max-width: 100px;}
+
+div {
+    background-color: whitesmoke;
+    position: static;
+    width: 300px;
+    border: 5px groove rgb(159, 208, 231);
+    padding: 50px;
+    margin: 10px;
+}
+
+div.pos_rel:hover {
+    position: relative;
+    background-color: thistle;
+}
+
+
+/*** flex container ***/
+
+.container {
+    display: flex;
+    flex-wrap: row wrap;
+    justify-content: center;
+}
+
+.items {
+    order: 3;
+    flex-grow: 2;
+}
+
+.container > div.flx_c {
+    background-color: #f1f1f1;
+    margin: 5px;
+    padding: 10px;
+}
+
+.items > div.flx_i{
+    background-color: rgb(226, 174, 76);
+}
+
+/*** grid container ***/
+
+.grid_con {
+    display: grid;
+    grid-template-columns: 50px auto 50px;
+    grid-template-rows: 40% auto;
+    grid-template-areas:
+    "header header header"
+    "sidebar . footer"
+}
+
+.grid_itm1 {
+    grid-area: header;
+    grid-column: 1 / span 3;
+    grid-row: row1-start / span 1;
+}
+.grid_itm2 {
+    grid-area: sidebar;
+    grid-column: 1 / span 1;
+    grid-row: row1-end / span 1;
+}
+.grid_itm3 {
+    grid-area: footer;
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.grid_con > div {
+    background-color: #f1f1f1;
+    margin: 5px;
+    padding: 10px;
+}
+
+.grid_itm1 > div{
+    background-color: rgb(226, 174, 76);
+}
+.grid_itm2 > div{
+    background-color: rgb(247, 123, 92);
+}
+.grid_itm3 > div{
+    background-color: rgb(119, 153, 245);
+}
+
+@media only screen and (max-width: auto) {
+    body {
+        background-color: black;
+    }
 }
